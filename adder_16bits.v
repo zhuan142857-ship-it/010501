@@ -1,4 +1,4 @@
-module sixteen_bit_adder(
+module adder_16bits(
     input [15:0] a,
     input [15:0] b,
     input cin,

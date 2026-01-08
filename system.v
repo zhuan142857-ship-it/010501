@@ -41,7 +41,7 @@ module system (
     );
     
     // 3. 实例化16位加法器
-    sixteen_bit_adder adder_inst (
+    adder_16bits adder_inst (
         .a   (q_a),
         .b   (q_b),
         .cin (cin),
@@ -51,14 +51,13 @@ module system (
     
     // 4. 实例化第三个16位寄存器（存储结果）
     dff_16bit result_register_inst (
-        .d   (sum_wire),      // 输入来自加法器输出
+        .d   (sum_wire),      
         .clk (clk),
         .rstn(rstn),
-        .en  (en_result),     // 专门的控制信号
-        .q   (q_result)       // 存储的结果
+        .en  (en_result),     
+        .q   (q_result)       
     );
-    
-    // 5. 输出存储的结果
+
     assign result = q_result;
     
 endmodule
