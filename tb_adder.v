@@ -1,10 +1,10 @@
-module tb_system;
+module tb_adder;
     reg  [15:0] d_a, d_b;
     reg clk=0, rstn, en_a, en_b, en_result, cin;
     wire [15:0] result;
     wire cout;
     
-    system uut (
+    system_adder uut (
         .d_a(d_a),
         .d_b(d_b),
         .clk(clk),
@@ -21,8 +21,8 @@ module tb_system;
     
     initial begin
         // 初始化
-        $dumpfile("wave.vcd");
-        $dumpvars(0, tb_system);
+        $dumpfile("wave_adder.vcd");
+        $dumpvars(0, uut);
         
         d_a=0; d_b=0; cin=0; 
         en_a=0; en_b=0; en_result=0;
